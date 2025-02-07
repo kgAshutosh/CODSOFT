@@ -1,75 +1,285 @@
-/* styles.css */
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Projects: Calculator & Tribute Page</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
+    h1, h2 {
+      text-align: center;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
+    /* Calculator Styles */
+    .calculator {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      max-width: 300px;
+      margin: 20px auto;
+    }
 
-header p {
-  font-size: 1.2rem;
-}
+    #display {
+      width: 100%;
+      height: 50px;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      text-align: right;
+      padding: 10px;
+      font-size: 24px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
 
-main {
-  padding: 20px;
-}
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
 
-section {
-  margin-bottom: 30px;
-}
+    .calculator button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-h2 {
-  color: #333;
-  border-bottom: 2px solid #333;
-  padding-bottom: 5px;
-}
+    .calculator button:hover {
+      background-color: #555;
+    }
 
-ul {
-  list-style-type: square;
-  padding-left: 20px;
-}
+    .calculator button:active {
+      background-color: #666;
+    }
 
-.image-container {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+    #clear {
+      grid-column: span 2;
+      background-color: #ff4444;
+    }
 
-.image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
+    #clear:hover {
+      background-color: #ff6666;
+    }
 
-blockquote {
-  font-style: italic;
-  background-color: #fff;
-  padding: 20px;
-  border-left: 5px solid #333;
-  margin: 0;
-}
+    /* Tribute Page Styles */
+    .tribute-page {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+    .tribute-page header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .tribute-page h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .tribute-page p {
+      font-size: 1.2rem;
+    }
+
+    .tribute-page section {
+      margin-bottom: 30px;
+    }
+
+    .tribute-page h2 {
+      color: #333;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    .tribute-page ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .tribute-page .image-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tribute-page .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .tribute-page blockquote {
+      font-style: italic;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-left: 5px solid #333;
+      margin: 0;
+    }
+
+    .tribute-page footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Calculator -->
+  <h1>Basic Calculator</h1>
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button>0</button>
+      <button>.</button>
+      <button>=</button>
+      <button>+</button>
+      <button id="clear">C</button>
+    </div>
+  </div>
+
+  <!-- Tribute Page -->
+  <div class="tribute-page">
+    <header>
+      <h1>Tribute to [Name]</h1>
+      <p>Celebrating the life and achievements of someone truly inspiring.</p>
+    </header>
+
+    <main>
+      <section id="introduction">
+        <h2>Who is [Name]?</h2>
+        <p>
+          [Write a brief introduction about the person you admire. Mention their background, what they are known for, and why they inspire you.]
+        </p>
+      </section>
+
+      <section id="qualities">
+        <h2>Admirable Qualities</h2>
+        <ul>
+          <li><strong>Quality 1:</strong> [Describe the first quality you admire.]</li>
+          <li><strong>Quality 2:</strong> [Describe the second quality you admire.]</li>
+          <li><strong>Quality 3:</strong> [Describe the third quality you admire.]</li>
+        </ul>
+      </section>
+
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="image-container">
+          <img src="image1.jpg" alt="Image 1 description">
+          <img src="image2.jpg" alt="Image 2 description">
+          <img src="image3.jpg" alt="Image 3 description">
+        </div>
+      </section>
+
+      <section id="quote">
+        <h2>Favorite Quote</h2>
+        <blockquote>
+          "[Insert a meaningful quote from the person you admire.]"
+        </blockquote>
+      </section>
+    </main>
+
+    <footer>
+      <p>Created with ❤️ by [Your Name]</p>
+    </footer>
+  </div>
+
+  <script>
+    // Calculator JavaScript
+    let display = document.getElementById('display');
+    let buttons = document.querySelectorAll('.calculator button');
+    let currentInput = '';
+    let operator = '';
+    let firstOperand = '';
+    let secondOperand = '';
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === 'C') {
+          // Clear the display and reset variables
+          currentInput = '';
+          operator = '';
+          firstOperand = '';
+          secondOperand = '';
+          display.value = '';
+        } else if (value === '=') {
+          // Perform calculation
+          if (firstOperand && operator && currentInput) {
+            secondOperand = currentInput;
+            display.value = calculate(firstOperand, secondOperand, operator);
+            currentInput = display.value;
+            operator = '';
+            firstOperand = '';
+          }
+        } else if (['+', '-', '*', '/'].includes(value)) {
+          // Handle operator input
+          if (currentInput) {
+            firstOperand = currentInput;
+            operator = value;
+            currentInput = '';
+          }
+        } else {
+          // Handle number and decimal input
+          currentInput += value;
+          display.value = currentInput;
+        }
+      });
+    });
+
+    function calculate(first, second, operator) {
+      first = parseFloat(first);
+      second = parseFloat(second);
+
+      switch (operator) {
+        case '+':
+          return first + second;
+        case '-':
+          return first - second;
+        case '*':
+          return first * second;
+        case '/':
+          return first / second;
+        default:
+          return '';
+      }
+    }
+  </script>
+</body>
+</html>
